@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human - Заклади</title>
+    <link rel="icon" href="https://static.wixstatic.com/media/48fa04_16713be6409a42c8af950690b4af511e~mv2.png/v1/fit/w_2500,h_1330,al_c/48fa04_16713be6409a42c8af950690b4af511e~mv2.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+        }
+        /* Боковая панель */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 80px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            padding: 15px;
+            width: 100%;
+            text-align: center;
+            margin: 10px 0;
+            background-color: #444;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #555;
+        }
+        
+        /* Основная часть */
+        .main-content {
+            margin-left: 100px;
+            padding: 20px;
+            width: calc(100% - 100px);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+
+        /* Список уроков */
+        .lesson-list {
+            margin-top: 30px;
+        }
+        .lesson-item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .lesson-item:hover {
+            transform: scale(1.02);
+            background-color: #e4e4e4;
+        }
+        .lesson-item .lesson-title {
+            font-size: 18px;
+        }
+        .lesson-item .rating {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1273f3;
+        }
+
+        .none {
+            background-color: #3f3f3f;
+        }
+
+        .none-title {
+            color: #f4f4f4;
+        }
+
+        .none:hover {
+            background-color: #313131;
+        }
+
+        .none-rating {
+            color: #07418d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Боковая панель -->
+    <div class="sidebar">
+        <a href="#home">🏢</a>
+        <a href="#lessons" id="less">📚</a>
+        <a href="#assignments">📝</a>
+        <a href="#grades">📊</a>
+    </div>
+
+    <!-- Основная часть -->
+    <div class="main-content">
+        <header>
+            <h1>Вибiр Дня</h1>
+        </header>
+
+        <div id="lessons-list" class="lesson-list">
+            <div class="lesson-item">
+                <div class="lesson-title">Понеділок</div>
+                <div class="rating">Вибір</div>
+            </div>
+            <div class="lesson-item">
+                <div class="lesson-title">Вівторок</div>
+                <div class="rating">Вибір</div>
+            </div>
+            <div class="lesson-item">
+                <div class="lesson-title">Середа</div>
+                <div class="rating">Вибір</div>
+            </div>
+            <div class="lesson-item" id="chet">
+                <div class="lesson-title" id="chet">Четвер</div>
+                <div class="rating" id="chet" >Вибір</div>
+            </div>
+            <div class="lesson-item">
+                <div class="lesson-title">П'ятниця</div>
+                <div class="rating">Вибір</div>
+            </div>
+            <div class="lesson-item none">
+                <div class="lesson-title none-title">Субота</div>
+                <div class="rating none-rating">❌</div>
+            </div>
+            <div class="lesson-item none">
+                <div class="lesson-title none-title">Неділя</div>
+                <div class="rating none-rating">❌</div>
+            </div>
+          </div>        
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Переход на index.html при клике на элемент с id="chet"
+            document.getElementById("chet").addEventListener("click", function () {
+                window.location.href = "lessons.html"; // Переход на index.html
+            });
+        });
+    </script>     
+</body>
+</html>
